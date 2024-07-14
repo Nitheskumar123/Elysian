@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="video-container">
+    <video class="video-slider" src="{% static "C:/Users/Asus/OneDrive/Desktop/res-final/myapp/resfinal/static/4042728-hd_1920_1080_24fps.mp4" %}"
+        type="video/mp4" autoplay loop muted playsinline ></video>
+    <section class="home_sec">
+        <div class="content">
+            <span class="bloody">BLOODY SWEET!!!</span>
+            <p class="home_content">
+                "உணவு போன்று உலகின் மனம் திருப்பும்." வணக்கம்! SNK உங்கள் உணவு பள்ளிக்கு வரவேற்கின்றது. எங்கள்
+                சுவையான உணவுகள் மற்றும் சேவைகள் உங்களை மகிழ்ச்சியுடன் அனுபவிப்பதை நாங்கள் உறுதியாகப் பரிசளிக்கிறோம்.
+                உங்களுக்கு பிடித்த விசைகளை சாப்பிட்டு விரும்புவீர்கள். SNK உங்களுக்கு அழைப்பு கொடுக்க எங்கள்
+                பக்கத்தில் வரவேற்கின்றது. உங்கள் அனுகூலமாக அழைப்பு எங்களுக்கு மிகவும் முக்கியமானது. நாங்கள் உங்களை
+                வரவேற்கின்றோம். SNK-வில் உணவின் மகிமையை அனுபவிக்க, இன்று உங்கள் அடுத்தக் கட்டத்தை எடுங்கள். உங்கள்
+                வருகையை மீண்டும் எங்கள் உணவு பள்ளியில் காண எதிர்பார்க்கின்றோம்."
+            </p>
+            <button class="btn1">EXPLORE</button>
+            <div class="social">
+                <a href="" style="--i:6"><i class='bx bxl-facebook'></i></a>
+                <a href="" style="--i:7"><i class='bx bxl-instagram'></i></a>
+                <a href="" style="--i:8"><i class='bx bxl-whatsapp'></i></a>
+                <a href="" style="--i:9"><i class='bx bxl-tiktok'></i></a>
+            </div>
+            <div class="social1">
+                <a id="playButton" onclick="toggleAudio()"><i class='bx bx-music'></i></a>
+                <a id="stopButton" style="display: none;" onclick="stopAudio()"><i
+                        class='bx bx-volume-mute'></i></a>
+            </div>
+        </div>
+    </section>
+</div>
+<audio id="autoplay" src="https://d6cp9b00-a.akamaihd.net/downloads/ringtones/files/mp3/anbe-en-anbe-song-ringtone-from-dhaam-dhoom-by-harris-jayaraj-19742.mp3" type="audio/mp4" loop></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var audio = document.getElementById("autoplay");
+    var playButton = document.getElementById("playButton");
+    var stopButton = document.getElementById("stopButton");
+
+    function toggleAudio() {
+        if (audio.paused) {
+            playAudio();
+        } else {
+            stopAudio();
+        }
+    }
+
+    function playAudio() {
+        audio.play().then(function() {
+            console.log("Audio is playing");
+            playButton.style.display = "none";
+            stopButton.style.display = "inline-flex";
+        }).catch(function(error) {
+            console.log("Failed to play audio: " + error);
+        });
+    }
+
+    function stopAudio() {
+        audio.pause();
+        audio.currentTime = 0;
+        playButton.style.display = "inline-flex";
+        stopButton.style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var typed = new Typed(".bloody", {
+            strings: ["BLOODY SWEET", "YUMMY"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true
+        });
+    });
+</script>
+
+{% endblock %}
+
+    

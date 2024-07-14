@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <section class="food_sec1">
+        <div class="food_type1">
+            {% for timing in timings %}
+            
+            <div class="foodtype1">
+                <img src="{{timing.image.url}}"
+                    alt="">
+                <h1>{{timing.name}}</h1>
+                <p>{{timing.description}}</p>
+    
+                {% with category_name=timing.category.name %}
+                        <a href="{% url 'products' category_name=category_name timing_name=timing.name %}">
+                            <button class="btn12">View Items</button>
+                        </a>
+                    {% endwith %}
+    
+    
+            </div>
+            {% endfor %}
+            
+        </div>
+    </section>
+
+{%endblock %}

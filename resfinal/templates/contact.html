@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="contactdiv">
+    <div class="contact-form">
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="contactform">
+            <div>
+                <h2>Contact Us</h2>
+            </div>
+            <input type="hidden" name="access_key" value="b176998a-ee3f-40cc-b464-f3dffbf50bd7">
+            <div class="contactform-class">
+    
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="contactform-class">
+    
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="contactform-class">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <div>
+                <button class="btn btn-primary">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="totalview">
+    <div class="viewdiv">
+        <div class="viewport">
+
+            <div class="viewimg">
+                <img src="{{item.product_image.url}}" alt="">
+            </div>
+            <div class="viewcontent">
+                <div>
+                    <h2>MASALA DOSA</h2>
+                </div>
+                <div class="conetentp">
+
+                    <p>
+                        {{ item.description }}
+                    </p>
+                </div>
+                <div class="des">
+                    <p>ORIGINAL PRICE:{{item.original_price}}</p>
+                </div>
+                <div>
+                    <p>DUPLICATE PRICE:{{item.selling_price}}</p>
+                </div>
+                <div class="cart">
+                    {% if item.quantity > 0 %}
+                        <input type="hidden" value="{{item.id}}" id="pid">
+                   
+                    <p class="quantity">
+                        <button class="add"><i class='bx bx-plus'></i></button>
+                        <span id="quantityvalue">0</span>
+                        <button class="minus"><i class='bx bx-minus'></i></button>
+                    </p>
+                  
+                    
+
+
+                </div>
+                <div>
+                    <button class="viewbtn" id="btncart">ADD TO CART</button>
+                </div>
+                {% else %}
+                    <button class="viewbtn">OUT OF STOCK</button>
+
+                {% endif %}
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        var add = document.querySelector('.add');
+        var minus = document.querySelector('.minus');
+        var quan = document.querySelector('#quantityvalue');
+        var pid=document.getElementById("pid");
+        var btncart=document.getElementById("btncart");
+        
+
+        add.addEventListener('click', function () {
+            let x = parseInt(quan.textContent, 10);
+            x = isNaN(x) ? 0 : x;
+            if (x < 10) {
+                x++;
+                quan.textContent = x;
+            }
+        });
+
+        minus.addEventListener('click', function () {
+            let x = parseInt(quan.textContent, 10);
+            x = isNaN(x) ? 0 : x;
+            if (x > 0) {
+                x--;
+                quan.textContent = x;
+            }
+        });
+
+        btncart.addEventListener('click',function(){
+            let x = parseInt(quan.textContent, 10);
+            x = isNaN(x) ? 0 : x;
+            if (x > 0) {
+                let itemobject={
+                    item_quantity:x,
+                    pid:pid.value,
+                }
+
+                fetch("/addtocart",{
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers:{
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRFToken': '{{ csrf_token }}',
+                    },
+                    body: JSON.stringify(itemobject)
+                  }).then(response => {
+                    return response.json();
+                  }).then(data => {
+                    //console.log(data);
+                    alert(data['status']);
+                    
+                  });
+           
+          
+                }
+            else{
+                alert("enter the quantity")
+            }
+        })
+    });
+
+</script>
+{% endblock %}

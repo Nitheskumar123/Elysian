@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="about" id="about">
+    <div class="about_div">
+        <div class="img">
+            <div>
+                <video autoplay muted id="img2" loop>
+                    <source src=" https://assets.mixkit.co/videos/29050/29050-720.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="star">
+                <img class="star1" style="--i:1"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfVJREFUSEvFlmFygjAQhTeCd+hM6BRPotxETmI9iXoS6UnKTMmMdyhp2k0JxjWBBH7AXzDfvre7LzJY6GELcSEKnGXZOwBUTdNUcwsOBr9yvlcAJw1k7Ng0DRYx+ZkEVgA1Y6ycozwYrG1W6mAkzoUHgznnJwawt71F+FrKor7dapfn+ctL3qZp/jcXO6XU21rKo/k2GtwpvRj1FN7B9qDUFoF2QQyg/BLirMckdDoyzq/dQVUjRGFbT4vxnZlKuZmi+JMB5ArgLIQo8XDad9qGThlajQp7tVGKOedPYLT1O0kOpvdGedq2Z91bpdAlfLRLxHa/2Va/+ml27TB+RwfMFIqn2xYbmrPHTiAAoCIhxGZsLuwNoBY7wdQ6e2dXAEczkUPgLMt2QxY/gckPzPsqlbL07amrgDGLR8FoKw4FY+wSE41m7cbC5aHHi1ht2zZ3uB7223OTDSZX6DrRXnfOXbvAceZ5UGSSg/rk6tIL81hfAiuAj0TKCodxbLqDwBpAsrqH3tOpF24GEwtC1foFsXwy2LN+3hWnUx4NNn8ArJBANUXatvpOlkmy+wHY0rubqg4GmxjUYGPfv4WFb89xNkwh+Km51aJuJ+cVOAAdy/NgxU/gGdBYxffwnwmNAuPH+r81Y3VMdvssD7Z6rGex7xcD/wKNiXIu+m+hrAAAAABJRU5ErkJggg==" />
+                <img class="star1" style="--i:2"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfVJREFUSEvFlmFygjAQhTeCd+hM6BRPotxETmI9iXoS6UnKTMmMdyhp2k0JxjWBBH7AXzDfvre7LzJY6GELcSEKnGXZOwBUTdNUcwsOBr9yvlcAJw1k7Ng0DRYx+ZkEVgA1Y6ycozwYrG1W6mAkzoUHgznnJwawt71F+FrKor7dapfn+ctL3qZp/jcXO6XU21rKo/k2GtwpvRj1FN7B9qDUFoF2QQyg/BLirMckdDoyzq/dQVUjRGFbT4vxnZlKuZmi+JMB5ArgLIQo8XDad9qGThlajQp7tVGKOedPYLT1O0kOpvdGedq2Z91bpdAlfLRLxHa/2Va/+ml27TB+RwfMFIqn2xYbmrPHTiAAoCIhxGZsLuwNoBY7wdQ6e2dXAEczkUPgLMt2QxY/gckPzPsqlbL07amrgDGLR8FoKw4FY+wSE41m7cbC5aHHi1ht2zZ3uB7223OTDSZX6DrRXnfOXbvAceZ5UGSSg/rk6tIL81hfAiuAj0TKCodxbLqDwBpAsrqH3tOpF24GEwtC1foFsXwy2LN+3hWnUx4NNn8ArJBANUXatvpOlkmy+wHY0rubqg4GmxjUYGPfv4WFb89xNkwh+Km51aJuJ+cVOAAdy/NgxU/gGdBYxffwnwmNAuPH+r81Y3VMdvssD7Z6rGex7xcD/wKNiXIu+m+hrAAAAABJRU5ErkJggg==" />
+                <img class="star1" style="--i:3"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfVJREFUSEvFlmFygjAQhTeCd+hM6BRPotxETmI9iXoS6UnKTMmMdyhp2k0JxjWBBH7AXzDfvre7LzJY6GELcSEKnGXZOwBUTdNUcwsOBr9yvlcAJw1k7Ng0DRYx+ZkEVgA1Y6ycozwYrG1W6mAkzoUHgznnJwawt71F+FrKor7dapfn+ctL3qZp/jcXO6XU21rKo/k2GtwpvRj1FN7B9qDUFoF2QQyg/BLirMckdDoyzq/dQVUjRGFbT4vxnZlKuZmi+JMB5ArgLIQo8XDad9qGThlajQp7tVGKOedPYLT1O0kOpvdGedq2Z91bpdAlfLRLxHa/2Va/+ml27TB+RwfMFIqn2xYbmrPHTiAAoCIhxGZsLuwNoBY7wdQ6e2dXAEczkUPgLMt2QxY/gckPzPsqlbL07amrgDGLR8FoKw4FY+wSE41m7cbC5aHHi1ht2zZ3uB7223OTDSZX6DrRXnfOXbvAceZ5UGSSg/rk6tIL81hfAiuAj0TKCodxbLqDwBpAsrqH3tOpF24GEwtC1foFsXwy2LN+3hWnUx4NNn8ArJBANUXatvpOlkmy+wHY0rubqg4GmxjUYGPfv4WFb89xNkwh+Km51aJuJ+cVOAAdy/NgxU/gGdBYxffwnwmNAuPH+r81Y3VMdvssD7Z6rGex7xcD/wKNiXIu+m+hrAAAAABJRU5ErkJggg==" />
+                <img class="star1" style="--i:4"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfVJREFUSEvFlmFygjAQhTeCd+hM6BRPotxETmI9iXoS6UnKTMmMdyhp2k0JxjWBBH7AXzDfvre7LzJY6GELcSEKnGXZOwBUTdNUcwsOBr9yvlcAJw1k7Ng0DRYx+ZkEVgA1Y6ycozwYrG1W6mAkzoUHgznnJwawt71F+FrKor7dapfn+ctL3qZp/jcXO6XU21rKo/k2GtwpvRj1FN7B9qDUFoF2QQyg/BLirMckdDoyzq/dQVUjRGFbT4vxnZlKuZmi+JMB5ArgLIQo8XDad9qGThlajQp7tVGKOedPYLT1O0kOpvdGedq2Z91bpdAlfLRLxHa/2Va/+ml27TB+RwfMFIqn2xYbmrPHTiAAoCIhxGZsLuwNoBY7wdQ6e2dXAEczkUPgLMt2QxY/gckPzPsqlbL07amrgDGLR8FoKw4FY+wSE41m7cbC5aHHi1ht2zZ3uB7223OTDSZX6DrRXnfOXbvAceZ5UGSSg/rk6tIL81hfAiuAj0TKCodxbLqDwBpAsrqH3tOpF24GEwtC1foFsXwy2LN+3hWnUx4NNn8ArJBANUXatvpOlkmy+wHY0rubqg4GmxjUYGPfv4WFb89xNkwh+Km51aJuJ+cVOAAdy/NgxU/gGdBYxffwnwmNAuPH+r81Y3VMdvssD7Z6rGex7xcD/wKNiXIu+m+hrAAAAABJRU5ErkJggg==" />
+                <img class="star1" style="--i:5"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAY9JREFUSEvFluFRwzAMRtVJoJvAJu0kwCSwCWxCOwnwelZPFbJluT/iu1xySeQnyZ9k72SjsduIK/eAD83pjxXnV8FPIvLZgM8i8lWFr4KBAmcABV4aK2AbrcLKUa+A30VE11fBrPOxEvIK+McASDMZOLV0c58aVfCriLyYmUmxiqwUdRVso4WPvQqNaPdT4TZD+y9pU7U+tA+PIqKXnxewFZummrs+n83zteZtxAgG4VQG9jiFnTo8skeAF7gFR2WSOaH2mimbJWy9M9ey82vsxTMLjv7zGbyp9UhclZT3xBmp/6at9gxn4ZG9bacIjHX918tH5TQD9/YeSnrDppLVcQbviTPdODIwovFNwwrJ2lNW3+1j2sUycCVimNNd7F6wF49V83CrzMDRFhjV7NvfS6A23fou7AUZmDVjspmh0bN70bGGAsvAPWExqW78vk/jAM4Od6uVOo5S2Gu13XUegf36apS9U0a0S3XLagS2UQyF4gRg7ZbARKAimT5LmcMDtt3DfiauGTUv/bMZ+BfM4lkfxUcWlgAAAABJRU5ErkJggg==" />
+
+            </div>
+
+
+        </div>
+        <div class="about_div1">
+            <h1 id="about_head1">AboutUs</h1>
+
+            <p class="about_detail">At SNK, we pride ourselves on being one of the largest and most prestigious
+                dining establishments in the heart of the city. Nestled as a cornerstone of culinary excellence, SNK
+                is not just a restaurant but a five-star destination known for its unparalleled service and
+                exquisite dining experience.Established with a vision to redefine dining, SNK stands tall as one of
+                the city's largest restaurants, boasting a grand venue that accommodates over 500 guests at any
+                given time. Our spacious layout ensures that every patron enjoys a comfortable and memorable dining
+                experience, whether it's a cozy dinner for two or a bustling celebration with friends and
+                family.Step into SNK and immerse yourself in a world of luxury and sophistication. Our tastefully
+                decorated interior features elegant décor, complemented by stylish furnishings and a warm, inviting
+                atmosphere. With meticulously arranged tables and comfortable seating, every corner of SNK exudes
+                charm and class, making it the perfect setting for any occasion.Led by our team of talented chefs,
+                SNK offers a diverse menu inspired by both local flavors and international cuisine. Our commitment
+                to
+                excellence and dedication to customer satisfaction ensure that every visit to SNK is a memorable
+                journey of flavors, elegance, and impeccable service.
+
+                Come and experience the essence of fine dining at SNK. Indulge in the best that hospitality has to
+                offer and create cherished moments with us. Welcome to SNK – where every meal is a celebration of
+                taste, tradition, and impeccable service.
+
+            </p>
+
+            <button class="btn12">More About Us</button>
+
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

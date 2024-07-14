@@ -1,0 +1,22 @@
+<header class="h">
+    <a href="#" class="logo">SNK</a>
+    <nav class="nav">
+        <a href="{% url 'index' %}" style="--i:1">HOME</a>
+        <a href="{% url 'about' %}" style="--i:2">ABOUT</a>
+        <a href="{% url 'menu' %}" style="--i:3">MENU</a>
+        
+        <a href="{% url 'contact'%}" style="--i:4">CONTACT</a>
+        
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" style="--i:5">LOGOUT</a>
+            <a href="{% url 'update-profile' %}" style="--i:6">UPDATE</a>
+            <a href="{% url 'book_table' %}" style="--i:7">BOOKING</a>
+            <a href="{% url 'mybooks' %}" style="--i:8">MY BOOKS</a>
+            <a href="{% url 'cart' %}" style="--i:9">CART</a>
+            <a href="{% url 'my-orders' %}" style="--i:10">MYORDERS</a>
+        
+        {% else %}
+            <a href="{% url 'signin' %}" style="--i:5">LOGIN</a>
+        {% endif %}
+    </nav>
+</header>

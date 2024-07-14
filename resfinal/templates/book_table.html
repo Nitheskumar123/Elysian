@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bookform1">
+    <form method="POST" action="{% url 'book_table' %}" class="bookform">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_username">Username</label>
+            {{ form.username }}
+        </div>
+        <div class="form-group">
+            <label for="id_how_many_members">Total Members:</label>
+            {{ form.total_members }}
+        </div>
+        <div class="form-group">
+            <label for="id_date_and_time">Date and Time:</label>
+            <div class="datetime-inputs">
+                {{ form.date_time }}
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

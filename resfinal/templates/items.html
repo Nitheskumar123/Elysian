@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="food_sec">
+    <div class="food_type">
+        {% for item in items %}
+        
+        <div class="foodtype">
+            <img src="{{item.product_image.url}}"
+                alt="">
+            <h1>{{item.name}}</h1>
+            <div class="prices">
+                <div class="original_price">
+                    <p><strike>{{item.original_price}}</strike></p>
+                </div>
+                <div class="selling_price">
+                    <p>{{item.selling_price}}</p>
+                </div>
+            </div>
+            {% with category_name=item.category.name timing_name=item.timing.name %}
+                <a href="{% url 'viewitem' category_name=category_name timing_name=timing_name item_name=item.name %}">
+                    <button class="btn12">View Item</button>
+                </a>
+            {% endwith %}
+
+
+
+        </div>
+        {% endfor %}
+        
+    </div>
+</section>
+
+{% endblock %}

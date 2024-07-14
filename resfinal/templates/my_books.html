@@ -1,0 +1,32 @@
+<!-- my_books.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mybook">
+    <div class="mybook1">
+        <h2>My Bookings</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>USERNAME</th>
+                <th>TOTAL MEMBERS</th>
+                <th>DATE-TIME</th>
+                <th>STATUS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.username }}</td>
+                <td>{{ booking.total_members }}</td>
+                <td>{{ booking.date_time }}</td>
+                <td>{% if booking.approved %}Approved{% else %}Pending{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+{% endblock %}

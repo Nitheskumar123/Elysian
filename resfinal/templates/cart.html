@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mybook">
+    <div class="mybook1">
+        <h2>My Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product name</th>
+                    <th>Quantity</th>
+                    <th>Amount(*per)</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                <tr class="cart1">
+                    <td><img src="{{ item.product.product_image.url }}" height="100px"></td>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.product_qty }}</td>
+                    <td>{{ item.product.selling_price }}</td>
+                    <td><a href="{% url 'removecart' item.id %}" onclick="return confirm('Are you sure to delete?')" class="btn btn-danger">Remove</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2 class="carth" style="margin-left:32%">TOTAL AMOUNT: <span id="totalAmount"></span></h2>
+        <a href="{% url 'checkout'%}">
+            <button style="margin-left: 40%; background-color: #007bff; padding: 10px; font-weight: 900; color: aliceblue; box-shadow: 0 0 5px cyan, 0 0 15px cyan, 0 0 5px cyan;">
+                Pay Now
+            </button>
+        </a>  
+</div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let total = 0;
+        {% for item in cart %}
+            total += {{ item.product.selling_price }} * {{ item.product_qty }};
+        {% endfor %}
+        document.getElementById('totalAmount').innerText = total.toFixed(2);
+    });
+</script>
+{% endblock %}

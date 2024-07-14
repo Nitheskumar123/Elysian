@@ -1,0 +1,16 @@
+<!-- update_profile.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="update">
+    <div class="update1">
+      
+    <form method="post" class="update_id">
+      <h2>Update Profile</h2>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    </div>
+  </div> 
+{% endblock %}

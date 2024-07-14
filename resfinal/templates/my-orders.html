@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="my-orders">
+    <div class="container mt-7" style="position: relative; padding-top:150px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order Date</th>
+                                    <th>Tracking Number</th>
+                                    <th>Total Price</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in orders %}
+                                <tr>
+                                    <td>{{ item.created_at }}</td>
+                                    <td>{{ item.tracking_no }}</td>
+                                    <td>{{ item.total_price }}</td>
+                                    <td>{{ item.status }}</td>
+                                    <td><a href="{% url 'orderview'  item.tracking_no  %}" class="btn btn-primary">View</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+{% endblock %}

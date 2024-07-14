@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="food_sec" >
+    <div class="food_type">
+        {% for menu in menus %}
+        
+        <div class="foodtype">
+            <img src="{{menu.image.url}}"
+                alt="">
+            <h1>{{menu.name}}</h1>
+            <p>{{menu.description}}</p>
+
+            <a href="{% url 'timing' menu.name %}"><button class="btn12">View Items</button></a>
+
+
+        </div>
+        {% endfor %}
+        
+    </div>
+</section>
+
+{% endblock %}
